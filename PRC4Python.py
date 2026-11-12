@@ -67,44 +67,31 @@ while True:
 2. Process Next Event
 3. Display Pending Events
 4. Cancel an Event
-5. Exit
-Enter your choice: 1
-Enter event name: Hack-A-Night
-Event added successfully.
 
-===== EVENT PROCESSING SYSTEM =====
-1. Add Event
-2. Process Next Event
-3. Display Pending Events
-4. Cancel an Event
-5. Exit
-Enter your choice: 2
-Processing event: Hack-A-Night
 
-===== EVENT PROCESSING SYSTEM =====
-1. Add Event
-2. Process Next Event
-3. Display Pending Events
-4. Cancel an Event
-5. Exit
-Enter your choice: 3
-No pending events.
+Practical No: 4(B)
 
-===== EVENT PROCESSING SYSTEM =====
-1. Add Event
-2. Process Next Event
-3. Display Pending Events
-4. Cancel an Event
-5. Exit
-Enter your choice: 4
-No pending events.
+Practical Title: Simulation of Real-Time Event Processing Using Queue
+स
 
-===== EVENT PROCESSING SYSTEM =====
-1. Add Event
-2. Process Next Event
-3. Display Pending Events
-4. Cancel an Event
-5. Exit
-Enter your choice: 5
-Exiting...
+Aim: Implement a real-time event processing system using a Queue data structure. The system should support the following features:
+Add an Event: When a new event occurs, it should be added to the event queue.
+Process the Next Event: The system should process and remove the event that has
+been in the queue the longest. Display Pending Events: Show all the events currently waiting to be processed.
+Cancel an Event: An event can be canceled if it has not been processed
+
+Objective:
+To implement a queue using a list or module
+To enqueue and dequeue event data
+To simulate real-time event arrival and processing
+
+Input:
+A series of event names as string inputs simulating real-time events
+
+Outcome:
+Students will understand queue operations and apply FIFO logic to event-driven systems.
+
+Theory: A queue is a First-In-First-Out (FIFO) structure. In real-time systems, events are received and processed in
+the same order. This is implemented using queue data structures, where new events are adde at the rear and processed from the front.
+
 '''
