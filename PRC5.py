@@ -232,100 +232,132 @@ Enter Name: Om Gaikwad
 Enter Marks: 85
 Student added successfully.
 
-===== STUDENT RECORD MANAGEMENT SYSTEM =====
-1. Add Student
-2. Delete Student
-3. Update Student
-4. Search Student
-5. Display Students
-6. Sort by Marks
-7. Sort by Roll Number
-8. Exit
-Enter your choice: 3
-Enter Roll No to update: 09
-Current Name : Om Gaikwad
-Current Marks: 85.0
-Enter new name: Gaikwad Om
-Enter new marks: 78
-Student record updated successfully.
+1. Aim
+To implement a Student Record Management System using a singly linked list and perform
+operations such as Add, Delete, Update, Search, Display, and Sort student records.
 
-===== STUDENT RECORD MANAGEMENT SYSTEM =====
-1. Add Student
-2. Delete Student
-3. Update Student
-4. Search Student
-5. Display Students
-6. Sort by Marks
-7. Sort by Roll Number
-8. Exit
-Enter your choice: 4
-Enter Roll No to search: 09
+2. Introduction
+A Linked List is a dynamic linear data structure in which elements are stored in the form of
+nodes. Each node contains:
+1. Data – information stored in the node.
+2. Link/Pointer – reference to the next node.
+For this practical, each student record contains:
+ Roll Number
+ Student Name
+ Marks
+ Link to the next student
+The nodes are connected sequentially to form a linked list.
 
-Student Found
-Roll No : 9
-Name : Gaikwad Om
-Marks : 78.0
+3. Node Structure
+The structure of a student node can be represented as:
 
-===== STUDENT RECORD MANAGEMENT SYSTEM =====
-1. Add Student
-2. Delete Student
-3. Update Student
-4. Search Student
-5. Display Students
-6. Sort by Marks
-7. Sort by Roll Number
-8. Exit
-Enter your choice: 5
+Roll No Name Marks Next
+Pointer
 
------------------------------------------
-Roll No Name            Marks
------------------------------------------
-9        Gaikwad Om              78.0
------------------------------------------
+Conceptually:
 
-===== STUDENT RECORD MANAGEMENT SYSTEM =====
-1. Add Student
-2. Delete Student
-3. Update Student
-4. Search Student
-5. Display Students
-6. Sort by Marks
-7. Sort by Roll Number
-8. Exit
-Enter your choice: 6
-1. Ascending
-2. Descending
-Enter choice: 7
-Invalid choice.
+HEAD
+↓
+[101, Rahul, 85] → [102, Sneha, 92] → [103, Amit, 78] → NULL
+HEAD stores the address/reference of the first node, while NULL indicates the end of the list.
 
------------------------------------------
-Roll No Name            Marks
------------------------------------------
-9        Gaikwad Om              78.0
------------------------------------------
+4. Operations Performed
+A. Add Student
+A new node is created containing the student&#39;s roll number, name, and marks.
+If the list is empty, the new node becomes the HEAD.
+Otherwise, the list is traversed until the last node and the new node is attached to it.
+Before:
+HEAD → [101] → [102] → NULL
 
-===== STUDENT RECORD MANAGEMENT SYSTEM =====
-1. Add Student
-2. Delete Student
-3. Update Student
-4. Search Student
-5. Display Students
-6. Sort by Marks
-7. Sort by Roll Number
-8. Exit
-Enter your choice: 2
-Enter Roll No to delete: 09
-Student deleted successfully.
+Add 103:
 
-===== STUDENT RECORD MANAGEMENT SYSTEM =====
-1. Add Student
-2. Delete Student
-3. Update Student
-4. Search Student
-5. Display Students
-6. Sort by Marks
-7. Sort by Roll Number
-8. Exit
-Enter your choice: 8
-Program terminated.
+HEAD → [101] → [102] → [103] → NULL
+Time Complexity: O(n) when inserting at the end.
+
+B. Delete Student
+Deletion removes a student record based on the Roll Number.
+The list is traversed until the required node is found. The link of the previous node is changed so
+that it points to the next node.
+Before:
+
+[101] → [102] → [103] → NULL
+
+Delete 102:
+
+[101] ─────────→ [103] → NULL
+If the first node is deleted, HEAD is moved to the second node.
+Time Complexity: O(n)
+
+C. Update Student
+The list is searched using the student&#39;s Roll Number.
+After finding the required node, the Name and Marks can be modified.
+Before:
+[101, Rahul, 85]
+
+After Update:
+[101, Rahul, 90]
+Time Complexity: O(n)
+
+D. Search Student
+Searching is performed using the Roll Number.
+The list is traversed from the first node to the last node until the required Roll Number is found.
+Example:
+HEAD
+↓
+[101] → [102] → [103] → NULL
+↑
+Search 102
+
+If the roll number exists, the student&#39;s complete record is displayed.
+Time Complexity: O(n)
+
+E. Display Student Records
+The list is traversed from HEAD to NULL.
+Each student&#39;s Roll Number, Name, and Marks are displayed.
+HEAD
+↓
+[101] → [102] → [103] → NULL
+↓ ↓ ↓
+Display Display Display
+Time Complexity: O(n)
+
+F. Sort Student Records
+Sorting arranges student records according to a particular field.
+In this practical, records can be sorted by:
+1. Roll Number
+2. Marks
+Two orders are supported:
+ Ascending order
+ Descending order
+For example, sorting by marks in ascending order:
+Before:
+
+Rahul → 85
+Sneha → 92
+Amit → 78
+
+After:
+
+Amit → 78
+Rahul → 85
+Sneha → 92
+Sorting Algorithm Used: Bubble Sort
+Time Complexity: O(n²)
+
+5. Why Linked List is Used?
+A linked list is useful for student records because:
+ Its size can grow or shrink dynamically.
+ Memory does not need to be allocated in advance.
+ Insertion and deletion can be performed without shifting other records.
+ It provides a convenient way to represent a collection of records.
+6 .Algorithm:
+Write Algorithms for program/code which you have implemented.
+7. Flowchart :
+Draw flowchart for above algorithm.
+
+8. Conclusion
+The Student Record Management System demonstrates how a singly linked list can be used to
+store and manage dynamic student records. The practical implements fundamental linked-list
+operations such as insertion, deletion, searching, updating, traversal, and sorting, providing a
+practical understanding of linked-list data structures.
 '''
