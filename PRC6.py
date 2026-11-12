@@ -97,64 +97,31 @@ Enter value: Apple
 Key-value pair inserted successfully.
 Hash index: 5
 
---- HASH TABLE MENU ---
-1. Insert
-2. Search
-3. Delete
-4. Display
-5. Exit
-Enter your choice: 1
-Enter key: 11
-Enter value: Samsung
-Key-value pair inserted successfully.
-Hash index: 1
+Practical No:05(C)
 
---- HASH TABLE MENU ---
-1. Insert
-2. Search
-3. Delete
-4. Display
-5. Exit
-Enter your choice: 2
-Enter key to search: 11
-Value found: Samsung
+Practical Title: Implementation of Hash Table using Division Method and Chaining
 
---- HASH TABLE MENU ---
-1. Insert
-2. Search
-3. Delete
-4. Display
-5. Exit
-Enter your choice: 3
-Enter key to delete: 15
-Key-value pair deleted successfully.
+Aim:
+Implement a hash table of size 10 and use the division method as a hash function. In case of a collision, use chaining. Implement the following operations:
+Insert(key): Insert key-value pairs into the hash table.
+Search(key): Search for the value associated with a given key.
+Delete(key): Delete a key-value pair from the hash table
+ते
 
---- HASH TABLE MENU ---
-1. Insert
-2. Search
-3. Delete
-4. Display
-5. Exit
-Enter your choice: 4
+Objective:
+To implement a hash function using the division method
+To handle collisions using linked list chaining
+To perform insert, search, and display operations
 
-Hash Table:
-0 : []
-1 : [[11, 'Samsung']]
-2 : []
-3 : []
-4 : []
-5 : []
-6 : []
-7 : []
-8 : []
-9 : []
+Input: A list of key values (e.g., integers) to be inserted into the hash table
+Outcome: Students will understand how hash tables manage data efficiently and how chaining handles hash collisions.
 
---- HASH TABLE MENU ---
-1. Insert
-2. Search
-3. Delete
-4. Display
-5. Exit
-Enter your choice: 5
-Program terminated.
+Theory:
+Hash tables provide efficient data retrieval. A hash function maps keys to indices. 
+The division method uses h(k) km to compute index. If collisions occur (same index for different keys), 
+chaining uses a linked list to store multiple items at the same index.
+A hash table is a data structure that maps keys to values, allowing for efficient insertion, deletion, 
+and search operations. It achieves this by using a hash function to compute an index into an array where the corresponding value is stored.
+This enables fast access to data, regardless of the table's size.
+
 '''
