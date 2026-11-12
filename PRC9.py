@@ -148,4 +148,59 @@ Inorder: 30 50 70
 Enter choice: 3
 Enter value to search: 30
 Value found.
+
+
+
+
+Practical Title:. Binary Search Tree (BST) Creation, Insertion, Deletion and Traversal
+
+Aim: Implement various operations on a Binary Search Tree, such as insertion, deletion, display, and search
+
+Objective:
+Construct a Binary Search Tree (BST)
+Insert new nodes into the BST
+Delete nodes from the BST
+Perform In-order, Pre-order, and Post-order traversals
+
+Input: A set of integers to be inserted into the BST and keys to be deleted
+
+Outcome: Students will be able to implement and manipulate BSTs and understand the role of tree traversal in data processing.
+
+Theory:
+A Binary Search Tree is a node-based binary tree where each node has a comparable key and satisfies the property: left child < parent < right child.
+Insertion: Place the node in left subtree if value is less, else in right subtree
+Deletion: Delete leaf node directly; if one child, connect parent to that child; if two children, replace with inorder successor
+Traversal: In-order gives sorted output, Pre-order for prefix expression, Post-order for postfix
+
+Algorithm:
+Insert(node, key):
+1. If node is null create node
+2. If key node.key insert into left subtree
+3. Else insert into right subtree
+Delete(node, key):
+1. If node is null return null
+2. Recurse left or right depending on key
+3. If found:
+If leaf delete
+If one child replace with child
+If two children replace with inorder successor
+Inorder(node):
+1. Traverse left
+2. Print node
+3. Traverse right
+Preorder(node):
+1. Print node
+2. Traverse left
+3. Traverse right
+Postorder(node):
+1. Traverse left
+2. Traverse right
+3. Print node
+
+Conclusion:
+By this way,
+.
+We implemented dynamic data structure for efficient data organization
+Learned to manage nodes with recursive logic
+Understood real-life importance of tree traversals
 '''
