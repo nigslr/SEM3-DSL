@@ -1,0 +1,158 @@
+// C++ Program
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 10
+
+char queue[MAX][50];
+int front = -1;
+int rear = -1;
+
+void addEvent()
+{
+    if (rear == MAX - 1)
+    {
+        printf("Queue is full! Cannot add event.\n");
+        return;
+    }
+
+    char event[50];
+
+    printf("Enter event name: ");
+    scanf(" %[^\n]", event);
+
+    if (front == -1)
+        front = 0;
+
+    rear++;
+    strcpy(queue[rear], event);
+
+    printf("Event added successfully.\n");
+}
+
+void processEvent()
+{
+    if (front == -1 || front > rear)
+    {
+        printf("No pending events.\n");
+        return;
+    }
+
+    printf("Processing event: %s\n", queue[front]);
+    front++;
+
+    if (front > rear)
+    {
+        front = -1;
+        rear = -1;
+    }
+}
+
+void displayEvents()
+{
+    if (front == -1)
+    {
+        printf("No pending events.\n");
+        return;
+    }
+
+    printf("\nPending Events:\n");
+
+    for (int i = front; i <= rear; i++)
+    {
+        printf("%d. %s\n", i - front + 1, queue[i]);
+    }
+}
+
+void cancelEvent()
+{
+    if (front == -1)
+    {
+        printf("No pending events.\n");
+        return;
+    }
+
+    char event[50];
+    int found = -1;
+
+    printf("Enter event name to cancel: ");
+    scanf(" %[^\n]", event);
+
+    // Search event
+    for (int i = front; i <= rear; i++)
+    {
+        if (strcmp(queue[i], event) == 0)
+        {
+            found = i;
+            break;
+        }
+    }
+
+    if (found == -1)
+    {
+        printf("Event not found.\n");
+        return;
+    }
+
+    for (int i = found; i < rear; i++)
+    {
+        strcpy(queue[i], queue[i + 1]);
+    }
+
+    rear--;
+
+    if (rear < front)
+    {
+        front = -1;
+        rear = -1;
+    }
+
+    printf("Event cancelled successfully.\n");
+}
+
+int main()
+{
+    int choice;
+
+    do
+    {
+        printf("\n===== EVENT PROCESSING SYSTEM =====\n");
+        printf("1. Add Event\n");
+        printf("2. Process Next Event\n");
+        printf("3. Display Pending Events\n");
+        printf("4. Cancel an Event\n");
+        printf("5. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1:
+                addEvent();
+                break;
+
+            case 2:
+                processEvent();
+                break;
+
+            case 3:
+                displayEvents();
+                break;
+
+            case 4:
+                cancelEvent();
+                break;
+
+            case 5:
+                printf("Exiting program...\n");
+                break;
+
+            default:
+                printf("Invalid choice!\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
